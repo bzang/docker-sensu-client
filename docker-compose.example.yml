@@ -1,0 +1,11 @@
+monitor_client:
+  image: berniezang/sensu-client
+  container_name: sensu_client
+  privileged: yes
+  net: host
+  volumes:
+      - /etc/haystack/sensu:/etc/sensu
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /usr/local/bin/docker:/usr/local/bin/docker
+      - /usr/bin/docker:/usr/bin/docker
+      - /usr/local/haystack/archives:/usr/local/haystack/archives
